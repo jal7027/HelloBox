@@ -14,6 +14,7 @@
 		2E8E87E51D402509005ECBDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E87E31D402509005ECBDA /* LaunchScreen.storyboard */; };
 		2E8E87F01D40250A005ECBDA /* HelloBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E87EF1D40250A005ECBDA /* HelloBoxTests.swift */; };
 		2E8E87FB1D40250A005ECBDA /* HelloBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E87FA1D40250A005ECBDA /* HelloBoxUITests.swift */; };
+		3BB53E0751DFF9885E3FC12E /* Pods_HelloBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16D7080D6326B44441047A7 /* Pods_HelloBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		2E8E87F61D40250A005ECBDA /* HelloBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8E87FA1D40250A005ECBDA /* HelloBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloBoxUITests.swift; sourceTree = "<group>"; };
 		2E8E87FC1D40250A005ECBDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C777CD83AD959233A43B89 /* Pods-HelloBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloBox/Pods-HelloBox.release.xcconfig"; sourceTree = "<group>"; };
+		A22989D07F7FCAFCB744156B /* Pods-HelloBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloBox/Pods-HelloBox.debug.xcconfig"; sourceTree = "<group>"; };
+		E16D7080D6326B44441047A7 /* Pods_HelloBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB53E0751DFF9885E3FC12E /* Pods_HelloBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		007FAE3710DF49946B8ABE20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A22989D07F7FCAFCB744156B /* Pods-HelloBox.debug.xcconfig */,
+				69C777CD83AD959233A43B89 /* Pods-HelloBox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2E8E87CE1D402509005ECBDA = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +95,8 @@
 				2E8E87EE1D40250A005ECBDA /* HelloBoxTests */,
 				2E8E87F91D40250A005ECBDA /* HelloBoxUITests */,
 				2E8E87D81D402509005ECBDA /* Products */,
+				007FAE3710DF49946B8ABE20 /* Pods */,
+				A2D04836D2AE1CAD336C9D35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +141,14 @@
 			path = HelloBoxUITests;
 			sourceTree = "<group>";
 		};
+		A2D04836D2AE1CAD336C9D35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E16D7080D6326B44441047A7 /* Pods_HelloBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E8E87FF1D40250A005ECBDA /* Build configuration list for PBXNativeTarget "HelloBox" */;
 			buildPhases = (
+				386B77E24DD099B1AED31F0E /* [CP] Check Pods Manifest.lock */,
 				2E8E87D31D402509005ECBDA /* Sources */,
 				2E8E87D41D402509005ECBDA /* Frameworks */,
 				2E8E87D51D402509005ECBDA /* Resources */,
+				D69603181C164496EC9511CF /* [CP] Embed Pods Frameworks */,
+				4FCE96E41B10EFE1C71EB842 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		386B77E24DD099B1AED31F0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4FCE96E41B10EFE1C71EB842 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloBox/Pods-HelloBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D69603181C164496EC9511CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloBox/Pods-HelloBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E8E87D31D402509005ECBDA /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		2E8E88001D40250A005ECBDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A22989D07F7FCAFCB744156B /* Pods-HelloBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelloBox/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		2E8E88011D40250A005ECBDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69C777CD83AD959233A43B89 /* Pods-HelloBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelloBox/Info.plist;
@@ -482,6 +559,7 @@
 				2E8E88011D40250A005ECBDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E8E88021D40250A005ECBDA /* Build configuration list for PBXNativeTarget "HelloBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +568,7 @@
 				2E8E88041D40250A005ECBDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E8E88051D40250A005ECBDA /* Build configuration list for PBXNativeTarget "HelloBoxUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +577,7 @@
 				2E8E88071D40250A005ECBDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
